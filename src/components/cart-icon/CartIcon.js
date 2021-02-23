@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { toggleCartHidden } from '../../redux/cart/cartActions';
 import { selectCartItemsCount } from '../../redux/cart/cartSelector';
 
@@ -20,8 +20,8 @@ const mapDispatchToProps = (dispatch) => ({
   toggleCartHidden: () => dispatch(toggleCartHidden()),
 });
 
-const mapStateToProps = (state) => {
-  console.log('I am being called');
+const mapStateToProps = createStructuredSelector({
+  // console.log('I am being called');
   // BELOW IS BAD EXAMPLE
   // return {
   //   // itemCount is a defined selector just to get a slice of whole state
@@ -30,9 +30,9 @@ const mapStateToProps = (state) => {
   //     0
   //   ),
   // };
-  return {
-    itemCount: selectCartItemsCount(state),
-  };
-};
+
+  // Right Way to save performance from expensive/repetitive computations.
+  itemCount: selectCartItemsCount,
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
