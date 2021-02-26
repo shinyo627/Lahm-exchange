@@ -21,7 +21,7 @@ export const selectorCollectionsForPreview = createSelector(
   (collections) => Object.keys(collections).map((key) => collections[key])
 );
 
-// Following currying method = function that returns function
+// ***Following currying method = function that returns function***
 // 1) First iteration
 // export const selectCollection = (collectionUrlParam) =>
 //   createSelector([selectCollections], (collections) =>
@@ -36,8 +36,8 @@ export const selectorCollectionsForPreview = createSelector(
 //     [selectCollections],
 //     (collections) => collections[collectionUrlParam]
 //   );
-// But Above cannot be memoized due to the collectionUrlParam is a dynamic argument
 
+// But Above cannot be memoized due to the collectionUrlParam is a dynamic argument
 // Alternative to really memoize the dynamic match.params argument...
 // Memoize does the same idea of memoization as reselect does for our selectors,
 // except this time we're memoizing the return of our function which returns our selector
@@ -48,7 +48,7 @@ export const selectCollection = memoize((collectionUrlParam) =>
   )
 );
 
-// CURRYING
+// ******CURRYING*********
 // 1)i.e...
 // const multiply = (a, b) => a * b;
 // const curriedMultiply = (a) = (b) => a * b;
