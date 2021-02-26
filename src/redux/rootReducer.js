@@ -1,9 +1,25 @@
 import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+// The storage is referencing the actual localStorage on web browser
+import storage from 'redux-persist/lib/storage';
 
 import userReducer from './user/userReducer';
 import cartReducer from './cart/cartReducer';
+import directoryReducer from './directory/directoryReducer';
+import shopReducer from './shop/shopReducer';
 
-export default combineReducers({
+const persistConfig = {
+  key: 'root',
+  storage,
+  // String name of the reducer obj cart
+  whitelist: ['cart'],
+};
+
+const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,
+  directory: directoryReducer,
+  shop: shopReducer,
 });
+
+export default persistReducer(persistConfig, rootReducer);
