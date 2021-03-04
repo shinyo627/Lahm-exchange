@@ -3,6 +3,7 @@ import { persistReducer } from 'redux-persist';
 // The storage is referencing the actual localStorage on web browser
 import storage from 'redux-persist/lib/storage';
 
+import notificationReducer from './notification/notificationReducer';
 import userReducer from './user/userReducer';
 import cartReducer from './cart/cartReducer';
 import directoryReducer from './directory/directoryReducer';
@@ -16,6 +17,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+  notification: notificationReducer,
   user: userReducer,
   cart: cartReducer,
   directory: directoryReducer,

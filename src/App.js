@@ -12,6 +12,7 @@ import ShopPage from './pages/shop/ShopPage';
 import AuthPage from './pages/auth/AuthPage';
 import CheckoutPage from './pages/checkout/CheckoutPage';
 import Header from './components/header/Header';
+import Notification from './components/notification/Notification';
 
 import './App.css';
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <Notification />
         <Switch>
           <Route exact path='/' component={Homepage} />
           <Route path='/shop' component={ShopPage} />

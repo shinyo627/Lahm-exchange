@@ -31,6 +31,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
           (cartItem) => cartItem.id !== payload.id
         ),
       };
+
     default:
       return state;
   }

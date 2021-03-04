@@ -2,12 +2,13 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/cart/cartActions';
+import { setNotification } from '../../redux/notification/notificationActions';
 
 import CustomButton from '../custom-button/CustomButton';
 
 import './CollectionItem.scss';
 
-const CollectionItem = ({ item, addItem }) => {
+const CollectionItem = ({ item, addItem, setNotification }) => {
   const { name, price, imageUrl } = item;
 
   return (
@@ -22,14 +23,21 @@ const CollectionItem = ({ item, addItem }) => {
         <span className='name'>{name}</span>
         <span className='name'>${price}</span>
       </div>
-      <CustomButton onClick={() => addItem(item)} inverted>
+      <CustomButton
+        onClick={() => {
+          addItem(item);
+          setNotification(`${name} has been added`, 'light');
+        }}
+        inverted
+      >
         ADD TO CART
       </CustomButton>
     </div>
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  addItem: (item) => dispatch(addItem(item)),
-});
-export default connect(null, mapDispatchToProps)(CollectionItem);
+// const mapDispatchToProps = (dispatch) => ({
+//   addItem: (item) => dispatch(addItem(item)),
+//   setNotification,
+// });
+export default connect(null, { addItem, setNotification })(CollectionItem);
