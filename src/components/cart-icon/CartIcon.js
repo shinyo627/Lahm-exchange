@@ -21,17 +21,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = createStructuredSelector({
-  // console.log('I am being called');
-  // BELOW IS BAD EXAMPLE
-  // return {
-  //   // itemCount is a defined selector just to get a slice of whole state
-  //   itemCount: cartItems.reduce(
-  //     (accQuantity, cartItem) => accQuantity + cartItem.quantity,
-  //     0
-  //   ),
-  // };
-
-  // Right Way to save performance from expensive/repetitive computations.
   itemCount: selectCartItemsCount,
 });
 

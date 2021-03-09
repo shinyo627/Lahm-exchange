@@ -6,7 +6,7 @@ const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => {
   return (
     <div
       className={`${size} menu-item`}
-      // Just appending linkUrl to the based url with match params with useRouter.
+      // Just appending linkUrl to the based url with match params with use of withRouter.
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <div
