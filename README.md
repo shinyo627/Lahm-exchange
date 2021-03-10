@@ -6,10 +6,3 @@ Technologies:
 MERN, Redux, Sass, Firebase, lodash library, reselect library, Stripe for payment method(testing mode)
 
 Link ---> https://lahm-exchange.herokuapp.com/
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
