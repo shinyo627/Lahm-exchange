@@ -3,7 +3,7 @@ Lahm-exchange is a ecommerce website for fashion brands.
 Currently, only built for client side with authentication functionality with Firebase google o-auth/Email-Password methods with Redux for global state management.
 
 Technologies: 
-MERN, Redux, Sass, Firebase, lodash library, reselect library, Stripe for payment method(testing mode)
+React, Redux, Sass, Firebase, lodash library, reselect library, Stripe for payment method(testing mode)
 
 Link ---> https://lahm-exchange.herokuapp.com/
 
